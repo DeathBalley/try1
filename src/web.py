@@ -38,7 +38,7 @@ def home():
 
     return render_template_string(HTML, monsters=monsters)
 
-    HTML_NEW = """
+HTML_NEW = """
 <!doctype html>
 <html>
   <head>
