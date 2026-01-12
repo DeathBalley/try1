@@ -17,7 +17,7 @@ if __name__ == "__main__":
     <title>Generador PDF</title>
   </head>
   <body>
-    <h1>Hola desde Flask 👋</h1>
+    <h1>Hola desde Flask </h1>
     <p>Si ves esto, la web funciona.</p>
   </body>
 </html>
