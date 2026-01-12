@@ -4,9 +4,41 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Generador PDF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   </head>
+  <script src="{{ url_for('static', filename='js/preview.js') }}"></script>
   <body>
-    <h1>Hola desde Flask </h1>
-    <p>Si ves esto, la web funciona.</p>
-  </body>
-</html>
+    <main class="container">
+      <h1>Plantilla editable</h1>
+
+      <section class="layout">
+        <!-- FORM -->
+        <form class="card" method="post" action="/pdf" id="form">
+          <label>
+            Título
+            <input type="text" name="titulo" id="titulo" placeholder="Ej: Informe semanal" />
+          </label>
+
+          <label>
+            Subtítulo
+            <input type="text" name="subtitulo" id="subtitulo" placeholder="Ej: Proyecto X" />
+          </label>
+
+          <label>
+            Texto principal
+            <textarea name="contenido" id="contenido" rows="10" placeholder="Aquí irá el texto del documento..."></textarea>
+          </label>
+
+          <button type="submit">Generar PDF</button>
+        </form>
+
+        <!-- PREVIEW -->
+        <div class="sheet">
+          <div class="a4">
+            <div class="preview-title" id="p_titulo">Sin título</div>
+            <div class="preview-subtitle" id="p_subtitulo"></div>
+            <div class="preview-body" id="p_contenido"></div>
+          </div>
+        </div>
+      </section>
+    </main>
