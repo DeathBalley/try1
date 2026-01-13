@@ -1,3 +1,6 @@
- Inventario Monsters
+ Plantilla para la app de Alfons
 
-App sencilla para registrar latas de Monster (sabor, tamaño, cantidad) usando SQLite.
+ Los statics son la logica que no va a cambiar
+    De monento css y js
+los teamplates es la parte visual
+    De momento el html
