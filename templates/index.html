@@ -1,44 +1,15 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Generador PDF</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-  </head>
-  <script src="{{ url_for('static', filename='js/preview.js') }}"></script>
-  <body>
-    <main class="container">
-      <h1>Plantilla editable</h1>
+<div class="sheet">
+  <div class="hero">
+    <img id="heroImg" alt="">
+  </div>
 
-      <section class="layout">
-        <!-- FORM -->
-        <form class="card" method="post" action="/pdf" id="form">
-          <label>
-            Título
-            <input type="text" name="titulo" id="titulo" placeholder="Ej: Informe semanal" />
-          </label>
+  <div class="bottom-row">
+    <div class="icon left"><img id="iconLeft" alt=""></div>
 
-          <label>
-            Subtítulo
-            <input type="text" name="subtitulo" id="subtitulo" placeholder="Ej: Proyecto X" />
-          </label>
+    <div class="name-wrap">
+      <div id="nameBox" class="name">NOMBRE</div>
+    </div>
 
-          <label>
-            Texto principal
-            <textarea name="contenido" id="contenido" rows="10" placeholder="Aquí irá el texto del documento..."></textarea>
-          </label>
-
-          <button type="submit">Generar PDF</button>
-        </form>
-
-        <!-- PREVIEW -->
-        <div class="sheet">
-          <div class="a4">
-            <div class="preview-title" id="p_titulo">Sin título</div>
-            <div class="preview-subtitle" id="p_subtitulo"></div>
-            <div class="preview-body" id="p_contenido"></div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <div class="icon right"><img id="iconRight" alt=""></div>
+  </div>
+</div>

@@ -1,87 +1,71 @@
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  margin: 0;
-  background: #f6f7f9;
-}
+@page { size: A4; margin: 0; }
+html, body { margin: 0; padding: 0; }
 
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 16px;
-}
-
-.card {
-  background: white;
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
-  padding: 18px;
-  display: grid;
-  gap: 14px;
-}
-
-label {
-  display: grid;
-  gap: 6px;
-  font-weight: 600;
-}
-
-input, textarea {
-  font: inherit;
-  padding: 10px 12px;
-  border: 1px solid #d0d5dd;
-  border-radius: 10px;
-}
-
-button {
-  font: inherit;
-  padding: 10px 14px;
-  border: 0;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.layout {
-  display: grid;
-  gap: 18px;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
-}
-
-@media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Preview tipo A4 */
-.sheet {
-  background: white;
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
-  padding: 24px;
-}
-
-.a4 {
+.sheet{
   width: 210mm;
-  min-height: 297mm;
-  margin: 0 auto;
-  padding: 18mm 16mm;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
+  height: 297mm;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
 }
 
-.preview-title {
-  font-size: 22px;
-  font-weight: 800;
-  margin: 0 0 8px 0;
+/* FOTO GRANDE 150x150 centrada arriba */
+.hero{
+  position: absolute;
+  top: 15mm;                 /* margen superior */
+  left: 50%;
+  width: 150mm;
+  height: 150mm;
+  transform: translateX(-50%);
+}
+.hero img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.preview-subtitle {
-  font-size: 14px;
-  margin: 0 0 16px 0;
-  opacity: 0.8;
+/* FILA inferior: icono - nombre - icono */
+.bottom-row{
+  position: absolute;
+  top: 180mm;                /* donde empieza la fila inferior */
+  left: 15mm;
+  right: 15mm;               /* márgenes laterales */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8mm;
 }
 
-.preview-body {
-  white-space: pre-wrap; /* respeta saltos de línea */
-  line-height: 1.4;
+.icon{
+  width: 25mm;
+  height: 25mm;
+  flex: 0 0 auto;
+}
+.icon img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.icon.right img{
+  transform: scaleX(-1);     /* mirror automático */
+  transform-origin: center;
+}
+
+/* El centro ocupa lo que queda */
+.name-wrap{
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+
+/* Nombre auto-ajustable */
+.name{
+  white-space: nowrap;
+  line-height: 1;
+  text-align: center;
+  font-size: 72pt;           /* el JS lo baja si no cabe */
+  padding: 0 2mm;
 }
